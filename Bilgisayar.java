@@ -1,10 +1,8 @@
-
 package prolab_proje_2;
 
 import java.util.ArrayList;
 import static prolab_proje_2.Test.basketbolcuListesi;
 import static prolab_proje_2.Test.futbolcuListesi;
-
 
 public class Bilgisayar extends Oyuncu{
     
@@ -29,10 +27,3 @@ public class Bilgisayar extends Oyuncu{
         return randtut;
     }
 }
-    
-
-   
-        
-    
-    
-
