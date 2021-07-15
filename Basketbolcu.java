@@ -1,10 +1,8 @@
-
 package prolab_proje_2;
 
 //import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
-
 
 public class Basketbolcu extends Sporcu{
     int ikilik;
@@ -82,9 +80,4 @@ public class Basketbolcu extends Sporcu{
     public void setSerbestAtış(int serbestAtış) {
         this.serbestAtış = serbestAtış;
     }
-    
-    
-    
-
-
 }
