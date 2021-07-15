@@ -1,12 +1,7 @@
-
 package prolab_proje_2;
 
-
 public class Sporcu {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public String sporcuIsim;
     public String sporcuTakim;
 
@@ -38,5 +33,4 @@ public class Sporcu {
     public void setSporcuTakim(String sporcuTakim) {
         this.sporcuTakim = sporcuTakim;
     }
-    
 }
