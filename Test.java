@@ -1,6 +1,4 @@
-
 package prolab_proje_2;
-
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -22,6 +20,7 @@ public class Test {
     int özellik2;
     int özellik3;
     String image= "";
+  
     public static boolean kullanildiMi;
     public static int sayacBasketbolcu = 0;
     public static int sayacFutbolcu = 0;
@@ -59,8 +58,6 @@ public class Test {
     
     public static void main(String[] args) {
     
-        
-    
         Test basketbolcu1 = new Test(1, 2, 3, "Kobe","kobebryant.jpg");
         Test basketbolcu2 = new Test(4, 5, 6, "Lebron","lebronjames.jpg");
         Test basketbolcu3 = new Test(7, 8, 9, "Michael","michealjordan.jpg");
@@ -69,7 +66,6 @@ public class Test {
         Test basketbolcu6 = new Test(16, 17, 18, "Tim","timduncan.jpg");      
         Test basketbolcu7 = new Test(19, 20, 21, "Bill","billrussell.jpg");       
         Test basketbolcu8 = new Test(22, 23, 24, "Cedi","cediosman.jpg");
-        
 
         basketbolcuListesi.add(basketbolcu1);
         basketbolcuListesi.add(basketbolcu2);
@@ -107,7 +103,6 @@ public class Test {
         futbolcuListesi.add(futbolcu6);
         futbolcuListesi.add(futbolcu7);
         futbolcuListesi.add(futbolcu8);
-        
        
         for (int i = 0; i < 4; i++) {
             int random2 = (int)((Math.random() * 10) % futbolcuListesi.size());
@@ -130,20 +125,15 @@ public class Test {
             System.out.println(bilgisayarKartlar.get(i).isim);    
         }
         System.out.println();
-
     
-    Oyunekranı oyunekrani = new Oyunekranı();
-    oyunekrani.setTitle("Kart Oyunu");
-    oyunekrani.setLayout(null);
-    oyunekrani.setResizable(false);
-    oyunekrani.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    oyunekrani.setVisible(true);
-    
+        Oyunekranı oyunekrani = new Oyunekranı();
+        oyunekrani.setTitle("Kart Oyunu");
+        oyunekrani.setLayout(null);
+        oyunekrani.setResizable(false);
+        oyunekrani.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        oyunekrani.setVisible(true);
     }
-
-
-
-
+  
     public String getIsim() {
         return isim;
     }
@@ -194,18 +184,5 @@ public class Test {
     
     public int pozisyon(Sporcu sporcuIsim){
         return ((int)((Math.random()) * 10)%3);
-    }
-
-   
-
-    
-
-    
-
-   
-
-    
-    
-    
-
+    }  
 }
