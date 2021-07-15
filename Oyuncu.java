@@ -1,6 +1,4 @@
-
 package prolab_proje_2;
-
 
 public abstract class Oyuncu {
     int oyuncuID;
@@ -36,10 +34,4 @@ public abstract class Oyuncu {
     public void setOyuncuSkor(int oyuncuSkor) {
         this.oyuncuSkor = oyuncuSkor;
     }
- 
-        
 }
-    
-   
-    
-
