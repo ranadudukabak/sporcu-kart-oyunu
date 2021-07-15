@@ -1,6 +1,4 @@
-
 package prolab_proje_2;
-
 
 public class Futbolcu extends Sporcu{
     int penaltı;
