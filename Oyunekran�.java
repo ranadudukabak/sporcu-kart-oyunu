@@ -16,17 +16,18 @@ import static prolab_proje_2.Test.pozisyonOyuncuBasketbolcu;
 import static prolab_proje_2.Test.pozisyonOyuncuFutbolcu;
 
 public class Oyunekranı extends javax.swing.JFrame implements ActionListener, MouseListener {
+
     public String alinanisim;
-    public int tut=-1;
-    public int tursayisi=1;
-    public int ks=0;
-    public int bs=0;
-    public int e=0;
-    public int q=4;
+    public int tut = -1;
+    public int tursayisi = 1;
+    public int ks = 0;
+    public int bs = 0;
+    public int e = 0;
+    public int q = 4;
     public int rnd;
     public int rand;
     public static String dosya = "/Users/rana/Documents/NetBeansProjects/prolab_proje_2/src/Images/";
-   
+
     public Oyunekranı() {
         initComponents();
         bKart1.setIcon(new ImageIcon("/Users/rana/Documents/NetBeansProjects/prolab_proje_2/src/Images/kartarkası.jpg"));
@@ -48,7 +49,7 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
         kKart6.setText(kullaniciKartlar.get(5).isim);
         kKart7.setText(kullaniciKartlar.get(6).isim);
         kKart8.setText(kullaniciKartlar.get(7).isim);
-        
+
         kKart1.addActionListener(this);
         kKart2.addActionListener(this);
         kKart3.addActionListener(this);
@@ -58,86 +59,85 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
         kKart7.addActionListener(this);
         kKart8.addActionListener(this);
     }
-   
+
     @Override
-      public void actionPerformed(ActionEvent e) { //İŞLEM SIRASI
+    public void actionPerformed(ActionEvent e) { //İŞLEM SIRASI
 
+        if (tursayisi % 2 != 0) {
+            if (e.getSource() == kKart1) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart1.getText());
+                pozisyonYaz(0);
+                kKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                //kÖzellik.setText(String.valueOf(kullaniciKartlar.get(0).özellik1));
+            }
 
-    if (tursayisi % 2 != 0) {
-            if(e.getSource()==kKart1){
-               kOrta.setBackground(java.awt.Color.white);     
-               kOrta.setText(kKart1.getText()); 
-               pozisyonYaz(0);
-               kKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-               //kÖzellik.setText(String.valueOf(kullaniciKartlar.get(0).özellik1));
-    }
-       
-    if(e.getSource()==kKart2){
-       kOrta.setBackground(java.awt.Color.white);      
-       kOrta.setText(kKart2.getText());
-       pozisyonYaz(1);
-       kKart2.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-       //kÖzellik.setText(String.valueOf(kullaniciKartlar.get(1).özellik1));
-    }
-       
-    if(e.getSource()==kKart3){
-       kOrta.setBackground(java.awt.Color.white);     
-       kOrta.setText(kKart3.getText());
-       pozisyonYaz(2);
-       kKart3.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-    }
-       
-    if(e.getSource()==kKart4){
-       kOrta.setBackground(java.awt.Color.white);      
-       kOrta.setText(kKart4.getText());
-       pozisyonYaz(3);
-       kKart4.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-    }
-    
-    if(e.getSource()==kKart5){
-       kOrta.setBackground(java.awt.Color.white);      
-       kOrta.setText(kKart5.getText());
-       pozisyonYaz(4);
-       kKart5.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-    }
-       
-    if(e.getSource()==kKart6){
-       kOrta.setBackground(java.awt.Color.white);      
-       kOrta.setText(kKart6.getText());
-       pozisyonYaz(5);
-       kKart6.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-    }
-       
-    if(e.getSource()==kKart7){
-       kOrta.setBackground(java.awt.Color.white);      
-       kOrta.setText(kKart7.getText());
-       pozisyonYaz(6);
-       kKart7.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-    }
-       
-    if(e.getSource()==kKart8){
-       kOrta.setBackground(java.awt.Color.white);      
-       kOrta.setText(kKart8.getText());
-       pozisyonYaz(7);
-       kKart8.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-    }
-   
-    tursayisi++;
-}
+            if (e.getSource() == kKart2) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart2.getText());
+                pozisyonYaz(1);
+                kKart2.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                //kÖzellik.setText(String.valueOf(kullaniciKartlar.get(1).özellik1));
+            }
 
-    if (tursayisi % 2 == 0 && (kOrta.getText().equals("Kobe")|| kOrta.getText().equals("Lebron")|| kOrta.getText().equals("Micheal")|| kOrta.getText().equals("Wilt")|| kOrta.getText().equals("Larry")|| kOrta.getText().equals("Tim")||kOrta.getText().equals("Bill")||kOrta.getText().equals("Cedi") )) {
+            if (e.getSource() == kKart3) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart3.getText());
+                pozisyonYaz(2);
+                kKart3.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+            }
 
-        kÖzellikSec(); 
-        bKartSec();
-        bÖzellikSec();
-        basketbolculariKarsilastir();
-        ortayitemizle();
-        tut = -1;
-        tursayisi++;
-    }
-         
-    if (tursayisi % 2 ==0 && (kOrta.getText().equals("Lionel")|| kOrta.getText().equals("Cristiano")|| kOrta.getText().equals("Diego")|| kOrta.getText().equals("Pele")|| kOrta.getText().equals("Ronaldinho")|| kOrta.getText().equals("Radamel")|| kOrta.getText().equals("Andres")||kOrta.getText().equals("Wesley"))){
-   
+            if (e.getSource() == kKart4) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart4.getText());
+                pozisyonYaz(3);
+                kKart4.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+            }
+
+            if (e.getSource() == kKart5) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart5.getText());
+                pozisyonYaz(4);
+                kKart5.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+            }
+
+            if (e.getSource() == kKart6) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart6.getText());
+                pozisyonYaz(5);
+                kKart6.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+            }
+
+            if (e.getSource() == kKart7) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart7.getText());
+                pozisyonYaz(6);
+                kKart7.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+            }
+
+            if (e.getSource() == kKart8) {
+                kOrta.setBackground(java.awt.Color.white);
+                kOrta.setText(kKart8.getText());
+                pozisyonYaz(7);
+                kKart8.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+            }
+
+            tursayisi++;
+        }
+
+        if (tursayisi % 2 == 0 && (kOrta.getText().equals("Kobe") || kOrta.getText().equals("Lebron") || kOrta.getText().equals("Micheal") || kOrta.getText().equals("Wilt") || kOrta.getText().equals("Larry") || kOrta.getText().equals("Tim") || kOrta.getText().equals("Bill") || kOrta.getText().equals("Cedi"))) {
+
+            kÖzellikSec();
+            bKartSec();
+            bÖzellikSec();
+            basketbolculariKarsilastir();
+            ortayitemizle();
+            tut = -1;
+            tursayisi++;
+        }
+
+        if (tursayisi % 2 == 0 && (kOrta.getText().equals("Lionel") || kOrta.getText().equals("Cristiano") || kOrta.getText().equals("Diego") || kOrta.getText().equals("Pele") || kOrta.getText().equals("Ronaldinho") || kOrta.getText().equals("Radamel") || kOrta.getText().equals("Andres") || kOrta.getText().equals("Wesley"))) {
+
             kÖzellikSec();
             bKartSec();
             bÖzellikSec();
@@ -145,159 +145,156 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
             ortayitemizle();
             tut = -1;
             tursayisi++;
-    }
-
-    if (tursayisi > 8) {
-       
-        kazananbelirle();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
         }
+
+        if (tursayisi > 8) {
+
+            kazananbelirle();
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
             //time.stop();
             setVisible(false);
             System.exit(0);
         }
     }
 
-  
     public int kullaniciSkorGoster(int pozisyonOyuncuBasketbolcu, int pozisyonBilgisayarBasketbolcu) {
-         if(pozisyonOyuncuBasketbolcu > pozisyonBilgisayarBasketbolcu)
-               kullaniciSkor += 10;
-         return kullaniciSkor;  
+        if (pozisyonOyuncuBasketbolcu > pozisyonBilgisayarBasketbolcu) {
+            kullaniciSkor += 10;
+        }
+        return kullaniciSkor;
     }
-    
+
     public int bilgisayarSkorGoster(int pozisyonOyuncuBasketbolcu, int pozisyonBilgisayarBasketbolcu) {
-            if(pozisyonOyuncuBasketbolcu < pozisyonBilgisayarBasketbolcu)
-                bilgisayarSkor += 10;
-            
-            return bilgisayarSkor;
+        if (pozisyonOyuncuBasketbolcu < pozisyonBilgisayarBasketbolcu) {
+            bilgisayarSkor += 10;
+        }
+
+        return bilgisayarSkor;
     }
 
     public int kullaniciSkor2Goster(int pozisyonOyuncuFutbolcu, int pozisyonBilgisayarFutbolcu) {
-        if(pozisyonOyuncuFutbolcu > pozisyonBilgisayarFutbolcu)
-                kullaniciSkor += 10;
-        
+        if (pozisyonOyuncuFutbolcu > pozisyonBilgisayarFutbolcu) {
+            kullaniciSkor += 10;
+        }
+
         return kullaniciSkor;
     }
-        
+
     public int bilgisayarSkor2Goster(int pozisyonOyuncuFutbolcu, int pozisyonBilgisayarFutbolcu) {
-        if(pozisyonOyuncuFutbolcu < pozisyonBilgisayarFutbolcu)
-                bilgisayarSkor += 10;
-            
+        if (pozisyonOyuncuFutbolcu < pozisyonBilgisayarFutbolcu) {
+            bilgisayarSkor += 10;
+        }
+
         return bilgisayarSkor;
     }
-   
+
     public void skorgoster() {
-     
-        int a= ks;
+
+        int a = ks;
         String s = Integer.toString(a);
         kSkor.setText(s);
-        int b=bs;
+        int b = bs;
         String t = Integer.toString(b);
         bSkor.setText(t);
     }
-   
+
     public void ortayitemizle() {
         bOrta.setBackground(java.awt.Color.black);
         kOrta.setBackground(java.awt.Color.black);
     }
-    
+
     public void kazananbelirle() {
-       
-        if(bilgisayarSkor>kullaniciSkor){
-            JOptionPane.showMessageDialog(null,"BİLGİSAYAR KAZANDI");
-        }
-       
-        else if(bilgisayarSkor<kullaniciSkor){
-            JOptionPane.showMessageDialog(null,"SİZ KAZANDINIZ");
-        }
-       
-        else if(bilgisayarSkor==kullaniciSkor){
-            JOptionPane.showMessageDialog(null,"BERABERE");
+
+        if (bilgisayarSkor > kullaniciSkor) {
+            JOptionPane.showMessageDialog(null, "BİLGİSAYAR KAZANDI");
+        } else if (bilgisayarSkor < kullaniciSkor) {
+            JOptionPane.showMessageDialog(null, "SİZ KAZANDINIZ");
+        } else if (bilgisayarSkor == kullaniciSkor) {
+            JOptionPane.showMessageDialog(null, "BERABERE");
         }
     }
-   
-    public void bKartSec() {
-     
-        if(kOrta.getText().equals("Kobe")|| kOrta.getText().equals("Lebron")|| kOrta.getText().equals("Micheal")|| kOrta.getText().equals("Wilt")|| kOrta.getText().equals("Larry")|| kOrta.getText().equals("Tim")||kOrta.getText().equals("Bill")||kOrta.getText().equals("Cedi") ){
-          
-           while(e<4){
-                 switch(e){
-                     case 0:
-                         bOrta.setText(bilgisayarKartlar.get(0).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));    
-                         e++;
-                     case 1:
-                         bOrta.setText(bilgisayarKartlar.get(1).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-                         e++;
-                     case 2:
-                         bOrta.setText(bilgisayarKartlar.get(2).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-                         e++;
-                     case 3:
-                         bOrta.setText(bilgisayarKartlar.get(3).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-                         e++;
-                 }
-             }
-         } 
-        
-         if(kOrta.getText().equals("Lionel")|| kOrta.getText().equals("Cristiano")|| kOrta.getText().equals("Diego")|| kOrta.getText().equals("Pele")|| kOrta.getText().equals("Ronaldinho")|| kOrta.getText().equals("Radamel")|| kOrta.getText().equals("Andres")||kOrta.getText().equals("Wesley") ){
 
-             while(q<8){
-                 switch(q){
-                     case 4:
-                         bOrta.setText(bilgisayarKartlar.get(0).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));    
-                         q++;
-                     case 5:
-                         bOrta.setText(bilgisayarKartlar.get(1).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-                         q++;
-                     case 6:
-                         bOrta.setText(bilgisayarKartlar.get(2).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-                         q++;
-                     case 7:
-                         bOrta.setText(bilgisayarKartlar.get(3).isim);
-                         bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
-                         q++;
-                 }
-             }
-         }
-     }
-     
-     
-     public void kÖzellikSec() {
-        
-           switch (özellik.getText()) {
-               case "PENALTI":
-                   kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rand).özellik1));
-                   break;
-               case "SERBEST VURUŞ":
-                   kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rand).özellik2));
-                   break;
-               case "KALECİYLE KARŞI KARŞIYA":
-                   kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rand).özellik3));
-                   break;
-               case "İKİLİK":
-                   kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rnd).özellik1));
-                   break;
-               case "ÜÇLÜK":
-                   kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rnd).özellik2));
-                   break;
-               case "SERBEST ATIŞ":
-                   kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rnd).özellik3));
-                   break;
-           }
-       }
-           
+    public void bKartSec() {
+
+        if (kOrta.getText().equals("Kobe") || kOrta.getText().equals("Lebron") || kOrta.getText().equals("Micheal") || kOrta.getText().equals("Wilt") || kOrta.getText().equals("Larry") || kOrta.getText().equals("Tim") || kOrta.getText().equals("Bill") || kOrta.getText().equals("Cedi")) {
+
+            while (e < 4) {
+                switch (e) {
+                    case 0:
+                        bOrta.setText(bilgisayarKartlar.get(0).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        e++;
+                    case 1:
+                        bOrta.setText(bilgisayarKartlar.get(1).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        e++;
+                    case 2:
+                        bOrta.setText(bilgisayarKartlar.get(2).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        e++;
+                    case 3:
+                        bOrta.setText(bilgisayarKartlar.get(3).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        e++;
+                }
+            }
+        }
+
+        if (kOrta.getText().equals("Lionel") || kOrta.getText().equals("Cristiano") || kOrta.getText().equals("Diego") || kOrta.getText().equals("Pele") || kOrta.getText().equals("Ronaldinho") || kOrta.getText().equals("Radamel") || kOrta.getText().equals("Andres") || kOrta.getText().equals("Wesley")) {
+
+            while (q < 8) {
+                switch (q) {
+                    case 4:
+                        bOrta.setText(bilgisayarKartlar.get(0).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        q++;
+                    case 5:
+                        bOrta.setText(bilgisayarKartlar.get(1).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        q++;
+                    case 6:
+                        bOrta.setText(bilgisayarKartlar.get(2).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        q++;
+                    case 7:
+                        bOrta.setText(bilgisayarKartlar.get(3).isim);
+                        bKart1.setIcon(new ImageIcon("/Users/gulay/Documents/NetBeansProjects/prolab_proje_2/src/Images/null.jpg"));
+                        q++;
+                }
+            }
+        }
+    }
+
+    public void kÖzellikSec() {
+
+        switch (özellik.getText()) {
+            case "PENALTI":
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rand).özellik1));
+                break;
+            case "SERBEST VURUŞ":
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rand).özellik2));
+                break;
+            case "KALECİYLE KARŞI KARŞIYA":
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rand).özellik3));
+                break;
+            case "İKİLİK":
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rnd).özellik1));
+                break;
+            case "ÜÇLÜK":
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rnd).özellik2));
+                break;
+            case "SERBEST ATIŞ":
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(rnd).özellik3));
+                break;
+        }
+    }
 
     public void bÖzellikSec() {
-       
+
         switch (özellik.getText()) {
             case "PENALTI":
                 bÖzellik.setText(String.valueOf(bilgisayarKartlar.get(rand).özellik1));
@@ -319,127 +316,124 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
                 break;
         }
     }
-    
+
     public void basketbolculariKarsilastir() {
-       
-            int rnd = (int) (Math.random() * 3);
-            
-            int j = (int) (Math.random() * 4)%(bilgisayarKartlar.size());
-            
-            switch (rnd) {
-                case 0:
-                    pozisyonOyuncuBasketbolcu[0] = kullaniciKartlar.get(j).özellik1;
-                    System.out.println(kullaniciKartlar.get(j).özellik1);
-                    
-                    pozisyonBilgisayarBasketbolcu[0] = bilgisayarKartlar.get(j).özellik1;
-                    System.out.println(bilgisayarKartlar.get(j).özellik1);     
-                    
-                    ks+=kullaniciSkorGoster(pozisyonOyuncuBasketbolcu[0], pozisyonBilgisayarBasketbolcu[0]);
-                    bs+=bilgisayarSkorGoster(pozisyonOyuncuBasketbolcu[0], pozisyonBilgisayarBasketbolcu[0]);
-                    
-                    kSkor.setText(String.valueOf(ks));
-                    bSkor.setText(String.valueOf(bs));
-                    
-                    //özellik.setText("İKİLİK");
-                    bÖzellik.setText(String.valueOf(pozisyonBilgisayarBasketbolcu[0]));
-                    kÖzellik.setText(String.valueOf(pozisyonOyuncuBasketbolcu[0]));
-                    break;
-                case 1:
-                    pozisyonOyuncuBasketbolcu[1] = kullaniciKartlar.get(j).özellik2;
-                    System.out.println(kullaniciKartlar.get(j).özellik2);
-                    pozisyonBilgisayarBasketbolcu[1] = bilgisayarKartlar.get(j).özellik2;
-                    System.out.println(bilgisayarKartlar.get(j).özellik2);
-                    
-                    ks+=kullaniciSkorGoster(pozisyonOyuncuBasketbolcu[1], pozisyonBilgisayarBasketbolcu[1]);
-                    bs+=bilgisayarSkorGoster(pozisyonOyuncuBasketbolcu[1], pozisyonBilgisayarBasketbolcu[1]);
-                    
-                    kSkor.setText(String.valueOf(ks));
-                    bSkor.setText(String.valueOf(bs));
-                    
 
-                    bÖzellik.setText(String.valueOf(pozisyonBilgisayarBasketbolcu[1]));
-                    kÖzellik.setText(String.valueOf(pozisyonOyuncuBasketbolcu[1]));
-                    break;
-                default:
-                    pozisyonOyuncuBasketbolcu[2] = kullaniciKartlar.get(j).özellik3;
-                    System.out.println(kullaniciKartlar.get(j).özellik3);
-                    pozisyonBilgisayarBasketbolcu[2] = bilgisayarKartlar.get(j).özellik3;
-                    System.out.println(bilgisayarKartlar.get(j).özellik3);
-                    
-                    ks+=kullaniciSkorGoster(pozisyonOyuncuBasketbolcu[2], pozisyonBilgisayarBasketbolcu[2]);
-                    bs+=bilgisayarSkorGoster(pozisyonOyuncuBasketbolcu[2], pozisyonBilgisayarBasketbolcu[2]);
-                    
-                    kSkor.setText(String.valueOf(ks));
-                    bSkor.setText(String.valueOf(bs));
-                    
+        int rnd = (int) (Math.random() * 3);
 
-                    bÖzellik.setText(String.valueOf(pozisyonBilgisayarBasketbolcu[2]));
-                    kÖzellik.setText(String.valueOf(pozisyonOyuncuBasketbolcu[2]));
-                    break;
-            }
+        int j = (int) (Math.random() * 4) % (bilgisayarKartlar.size());
+
+        switch (rnd) {
+            case 0:
+                pozisyonOyuncuBasketbolcu[0] = kullaniciKartlar.get(j).özellik1;
+                System.out.println(kullaniciKartlar.get(j).özellik1);
+
+                pozisyonBilgisayarBasketbolcu[0] = bilgisayarKartlar.get(j).özellik1;
+                System.out.println(bilgisayarKartlar.get(j).özellik1);
+
+                ks += kullaniciSkorGoster(pozisyonOyuncuBasketbolcu[0], pozisyonBilgisayarBasketbolcu[0]);
+                bs += bilgisayarSkorGoster(pozisyonOyuncuBasketbolcu[0], pozisyonBilgisayarBasketbolcu[0]);
+
+                kSkor.setText(String.valueOf(ks));
+                bSkor.setText(String.valueOf(bs));
+
+                //özellik.setText("İKİLİK");
+                bÖzellik.setText(String.valueOf(pozisyonBilgisayarBasketbolcu[0]));
+                kÖzellik.setText(String.valueOf(pozisyonOyuncuBasketbolcu[0]));
+                break;
+            case 1:
+                pozisyonOyuncuBasketbolcu[1] = kullaniciKartlar.get(j).özellik2;
+                System.out.println(kullaniciKartlar.get(j).özellik2);
+                pozisyonBilgisayarBasketbolcu[1] = bilgisayarKartlar.get(j).özellik2;
+                System.out.println(bilgisayarKartlar.get(j).özellik2);
+
+                ks += kullaniciSkorGoster(pozisyonOyuncuBasketbolcu[1], pozisyonBilgisayarBasketbolcu[1]);
+                bs += bilgisayarSkorGoster(pozisyonOyuncuBasketbolcu[1], pozisyonBilgisayarBasketbolcu[1]);
+
+                kSkor.setText(String.valueOf(ks));
+                bSkor.setText(String.valueOf(bs));
+
+                bÖzellik.setText(String.valueOf(pozisyonBilgisayarBasketbolcu[1]));
+                kÖzellik.setText(String.valueOf(pozisyonOyuncuBasketbolcu[1]));
+                break;
+            default:
+                pozisyonOyuncuBasketbolcu[2] = kullaniciKartlar.get(j).özellik3;
+                System.out.println(kullaniciKartlar.get(j).özellik3);
+                pozisyonBilgisayarBasketbolcu[2] = bilgisayarKartlar.get(j).özellik3;
+                System.out.println(bilgisayarKartlar.get(j).özellik3);
+
+                ks += kullaniciSkorGoster(pozisyonOyuncuBasketbolcu[2], pozisyonBilgisayarBasketbolcu[2]);
+                bs += bilgisayarSkorGoster(pozisyonOyuncuBasketbolcu[2], pozisyonBilgisayarBasketbolcu[2]);
+
+                kSkor.setText(String.valueOf(ks));
+                bSkor.setText(String.valueOf(bs));
+
+                bÖzellik.setText(String.valueOf(pozisyonBilgisayarBasketbolcu[2]));
+                kÖzellik.setText(String.valueOf(pozisyonOyuncuBasketbolcu[2]));
+                break;
         }
-   
+    }
+
     public void futbolculariKarsilastir() {
-       
-            int rand = (int) (Math.random() * 3);
 
-            int j = (int) (Math.random() * 4)% bilgisayarKartlar.size();
-            
-            switch (rand) {
-                case 0:
-                    pozisyonOyuncuFutbolcu[0] = kullaniciKartlar.get(j).özellik1;
-                    System.out.println(kullaniciKartlar.get(j).özellik1);
-                    
-                    pozisyonBilgisayarFutbolcu[0] = bilgisayarKartlar.get(j).özellik1;
-                    System.out.println(bilgisayarKartlar.get(j).özellik1);
+        int rand = (int) (Math.random() * 3);
 
-                    ks+=kullaniciSkorGoster(pozisyonOyuncuFutbolcu[0], pozisyonBilgisayarFutbolcu[0]);
-                    bs+=bilgisayarSkorGoster(pozisyonOyuncuFutbolcu[0], pozisyonBilgisayarFutbolcu[0]);
-                    
-                    kSkor.setText(String.valueOf(ks));
-                    bSkor.setText(String.valueOf(bs));
-                    
-                    bÖzellik.setText(String.valueOf(bilgisayarKartlar.get(j).özellik1));
-                    kÖzellik.setText(String.valueOf(kullaniciKartlar.get(j).özellik1));
-                    break;
-                case 1:
-                    pozisyonOyuncuFutbolcu[1] = kullaniciKartlar.get(j).özellik2;
-                    System.out.println(kullaniciKartlar.get(j).özellik2);
-                    pozisyonBilgisayarFutbolcu[1] = bilgisayarKartlar.get(j).özellik2;
-                    System.out.println(bilgisayarKartlar.get(j).özellik2);
-    
-                    ks+=kullaniciSkorGoster(pozisyonOyuncuFutbolcu[1], pozisyonBilgisayarFutbolcu[1]);
-                    bs+=bilgisayarSkorGoster(pozisyonOyuncuFutbolcu[1], pozisyonBilgisayarFutbolcu[1]);
-                    
-                    kSkor.setText(String.valueOf(ks));
-                    bSkor.setText(String.valueOf(bs));
-                   
-                    bÖzellik.setText(String.valueOf(bilgisayarKartlar.get(j).özellik2));
-                    kÖzellik.setText(String.valueOf(kullaniciKartlar.get(j).özellik2));
-                    break;
-                default:
-                    pozisyonOyuncuFutbolcu[2] = kullaniciKartlar.get(j).özellik3;
-                    System.out.println(kullaniciKartlar.get(j).özellik3);
-                    pozisyonBilgisayarFutbolcu[2] = bilgisayarKartlar.get(j).özellik3;
-                    System.out.println(bilgisayarKartlar.get(j).özellik3);
-            
-                    ks+=kullaniciSkorGoster(pozisyonOyuncuFutbolcu[2], pozisyonBilgisayarFutbolcu[2]);
-                    bs+=bilgisayarSkorGoster(pozisyonOyuncuFutbolcu[2], pozisyonBilgisayarFutbolcu[2]);
-                    
-                    kSkor.setText(String.valueOf(ks));
-                    bSkor.setText(String.valueOf(bs));
-                   
+        int j = (int) (Math.random() * 4) % bilgisayarKartlar.size();
 
-                    bÖzellik.setText(String.valueOf(bilgisayarKartlar.get(j).özellik3));
-                    kÖzellik.setText(String.valueOf(kullaniciKartlar.get(j).özellik3));
-                    break;
-            }
+        switch (rand) {
+            case 0:
+                pozisyonOyuncuFutbolcu[0] = kullaniciKartlar.get(j).özellik1;
+                System.out.println(kullaniciKartlar.get(j).özellik1);
 
+                pozisyonBilgisayarFutbolcu[0] = bilgisayarKartlar.get(j).özellik1;
+                System.out.println(bilgisayarKartlar.get(j).özellik1);
+
+                ks += kullaniciSkorGoster(pozisyonOyuncuFutbolcu[0], pozisyonBilgisayarFutbolcu[0]);
+                bs += bilgisayarSkorGoster(pozisyonOyuncuFutbolcu[0], pozisyonBilgisayarFutbolcu[0]);
+
+                kSkor.setText(String.valueOf(ks));
+                bSkor.setText(String.valueOf(bs));
+
+                bÖzellik.setText(String.valueOf(bilgisayarKartlar.get(j).özellik1));
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(j).özellik1));
+                break;
+            case 1:
+                pozisyonOyuncuFutbolcu[1] = kullaniciKartlar.get(j).özellik2;
+                System.out.println(kullaniciKartlar.get(j).özellik2);
+                pozisyonBilgisayarFutbolcu[1] = bilgisayarKartlar.get(j).özellik2;
+                System.out.println(bilgisayarKartlar.get(j).özellik2);
+
+                ks += kullaniciSkorGoster(pozisyonOyuncuFutbolcu[1], pozisyonBilgisayarFutbolcu[1]);
+                bs += bilgisayarSkorGoster(pozisyonOyuncuFutbolcu[1], pozisyonBilgisayarFutbolcu[1]);
+
+                kSkor.setText(String.valueOf(ks));
+                bSkor.setText(String.valueOf(bs));
+
+                bÖzellik.setText(String.valueOf(bilgisayarKartlar.get(j).özellik2));
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(j).özellik2));
+                break;
+            default:
+                pozisyonOyuncuFutbolcu[2] = kullaniciKartlar.get(j).özellik3;
+                System.out.println(kullaniciKartlar.get(j).özellik3);
+                pozisyonBilgisayarFutbolcu[2] = bilgisayarKartlar.get(j).özellik3;
+                System.out.println(bilgisayarKartlar.get(j).özellik3);
+
+                ks += kullaniciSkorGoster(pozisyonOyuncuFutbolcu[2], pozisyonBilgisayarFutbolcu[2]);
+                bs += bilgisayarSkorGoster(pozisyonOyuncuFutbolcu[2], pozisyonBilgisayarFutbolcu[2]);
+
+                kSkor.setText(String.valueOf(ks));
+                bSkor.setText(String.valueOf(bs));
+
+                bÖzellik.setText(String.valueOf(bilgisayarKartlar.get(j).özellik3));
+                kÖzellik.setText(String.valueOf(kullaniciKartlar.get(j).özellik3));
+                break;
         }
-     
-    public void pozisyonYaz(int i){
 
-        if(i<4){
+    }
+
+    public void pozisyonYaz(int i) {
+
+        if (i < 4) {
             switch (rnd) {
                 case 0:
                     özellik.setText("İKİLİK");
@@ -451,8 +445,7 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
                     özellik.setText("SERBEST ATIŞ");
                     break;
             }
-        }
-        else if(i>=4){
+        } else if (i >= 4) {
             switch (rand) {
                 case 0:
                     özellik.setText("PENALTI");
@@ -463,35 +456,35 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
                 default:
                     özellik.setText("KALECİYLE KARŞI KARŞIYA");
                     break;
-            } 
+            }
         }
     }
-   
+
     @Override
     public void mouseClicked(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-       
+
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -673,15 +666,15 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void kÖzellikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kÖzellikActionPerformed
-        
+
     }//GEN-LAST:event_kÖzellikActionPerformed
 
     private void bKart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKart1ActionPerformed
-      
+
     }//GEN-LAST:event_bKart1ActionPerformed
 
     private void bKart2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKart2ActionPerformed
@@ -689,17 +682,17 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
     }//GEN-LAST:event_bKart2ActionPerformed
 
     private void özellikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_özellikActionPerformed
-        
+
     }//GEN-LAST:event_özellikActionPerformed
 
     private void kKart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kKart1ActionPerformed
- 
+
     }//GEN-LAST:event_kKart1ActionPerformed
 
     private void bOrtaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bOrtaActionPerformed
-       
+
     }//GEN-LAST:event_bOrtaActionPerformed
-  
+
     /**
      * @param args the command line arguments
      */
@@ -726,15 +719,15 @@ public class Oyunekranı extends javax.swing.JFrame implements ActionListener, M
             java.util.logging.Logger.getLogger(Oyunekranı.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Oyunekranı().setVisible(true);
-                
+
             }
         }
-    );
-       
+        );
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
